@@ -1,0 +1,38 @@
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.log
+
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+.mcp.json
+mcp_config.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local agent/runtime state
+.claude/settings.local.json
+.codex/
+.cursor/
+.idea/
+.vscode/
+.tmp/
+tmp/
+.DS_Store
+
+# Lens Studio local/cache state
+Cache/
+Caches/
+Temp/
+Library/
+*.autosave
+
+# Private captures and large local evidence
+artifacts/
+captures/
+recordings/
