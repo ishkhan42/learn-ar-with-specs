@@ -138,6 +138,32 @@ A candidate should use at least one convincingly; the strongest concepts combine
 - Include a reset or recovery path.
 - Do not record, identify, or follow people without consent.
 
+## Capability map
+
+SPECS 27 is a standalone see-through AR computer with a 51° display, 16 million colors, open-ear stereo audio, microphones, dual processors, Wi-Fi (and an optional cellular case), world-facing cameras, hand tracking, voice input, and 6DoF world tracking. A Lens can use TypeScript/JavaScript logic, 3D rendering, animation, particles, physics, sound, standard UI, local/on-device ML, HTTPS/WebSockets, remote media, cloud AI services, location/heading, world surfaces, persistent spatial anchors, and synchronized multi-user sessions.
+
+Device capability is broader than hackathon-demo capability:
+
+| Capability | Available on device | Hackathon position |
+|---|---|---|
+| World-scale 3D, text, panels, animation, particles, simple physics and spatial sound | Yes | Strong, directly demonstrable |
+| Head/world tracking and content fixed in space | Yes | Strong, directly demonstrable |
+| Standard hand input: ray, pinch, poke, press, grab, drag, throw, sliders and toggles | Yes | Strong with SIK/UIKit and mouse-driven Preview |
+| Full hand joints, custom poses, two-hand motion and speed interpretation | Yes | Do not make core: Preview cannot prove natural behavior |
+| Real surfaces, depth and lightweight world hit testing | Yes | Use a virtual surface or deterministic placement in Preview |
+| Camera frames, still capture and on-device SnapML classification/detection/segmentation | Yes, permission-controlled | Do not make core: real camera vision is unavailable in Preview |
+| Marker, face and some body/object tracking | Supported with limits and permissions | High demo/privacy risk; never identify or follow people without consent |
+| Speech-to-text in 40+ languages, microphones and voice commands | Yes | Pair every action with a button; voice may not work in Preview |
+| GPS, heading and location-aware content | Yes, with account/network/permission requirements | Simulate the route/place with sample data and virtual markers |
+| HTTPS, WebSockets, external APIs and downloaded media | Yes | Use sample data and deterministic offline fallback |
+| Remote AI: OpenAI, Gemini, DeepSeek, image/TTS/realtime services and Snap text-to-3D | Yes, token/permission-controlled | Optional enhancement only; never make the judged flow depend on a live response |
+| Persistent world anchors across sessions | Yes | Keep out of done criteria because persistence cannot be demonstrated reliably |
+| Synchronous colocated multi-user Connected Lenses | Yes | Keep out of core: requires multiple physical devices and people |
+
+Privacy permissions constrain combinations. Camera, microphone, precise location and similar sensitive data require consent; combining them with external connectivity may require transparent or extended permissions, and some experimental combinations cannot be publicly released. Prefer processed local signals and the least permission needed.
+
+For ideation, separate the **trigger** from the **value**. If recognition, voice, location, AI or live data triggers the experience, Preview may substitute an explicit button or fixed sample. The useful spatial response after that trigger must still be complete and real.
+
 ## Preview contract
 
 Every done criterion must be demonstrable in Lens Studio Preview.
